@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>js03.html</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <form action="">
+            <input type="text" id="L1">
+            <input type="text" id="L2">
+            <button type="button" id="butt">Oblicz!</button><br><br>
+            <p style="display:inline">Liczba1 + Liczba2 = </p>
+            <output id="dodawanie"></output><br><br>
+            <p style="display:inline">Liczba1 - Liczba2 = </p>
+            <output id="odejmowanie"></output><br><br>
+            <p style="display:inline">Liczba1 * Liczba2 = </p>
+            <output id="mnozenie"></output><br><br>
+            <p style="display:inline">Liczba1 / Liczba2 = </p>
+            <output id="dzielenie"></output>
+            <script>
+                function result()
+                {
+                    var liczba1 = parseFloat($("#L1").val());
+                    var liczba2 = parseFloat($("#L2").val());
+                    $("#dodawanie").val(liczba1 + liczba2);
+                    $("#odejmowanie").val(liczba1 - liczba2);
+                    $("#mnozenie").val(liczba1 * liczba2);
+                    if(liczba2 != 0){
+                        $("#dzielenie").val(liczba1 / liczba2);
+                    }else{
+                        $("#dzielenie").val("Nie można dzielić przez 0");
+                    }
+                }
+                $("#butt").click(result);
+            </script>
+        </form>
+    </body>
+</html>

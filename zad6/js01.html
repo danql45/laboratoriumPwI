@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>js01.html</title>
+    </head>
+    <body>
+        <form action="">
+            <input type="text" id="L1">
+            <input type="text" id="L2">
+            <button type="button" onclick="result()" id="butt">Oblicz!</button><br><br>
+            <p style="display:inline">Liczba1 + Liczba2 = </p>
+            <output id="dodawanie"></output><br><br>
+            <p style="display:inline">Liczba1 - Liczba2 = </p>
+            <output id="odejmowanie"></output><br><br>
+            <p style="display:inline">Liczba1 * Liczba2 = </p>
+            <output id="mnozenie"></output><br><br>
+            <p style="display:inline">Liczba1 / Liczba2 = </p>
+            <output id="dzielenie"></output>
+            <script>
+                function result()
+                {
+                    var liczba1 = parseFloat(document.getElementById("L1").value);
+                    var liczba2 = parseFloat(document.getElementById("L2").value);
+                    document.getElementById("dodawanie").innerHTML = liczba1 + liczba2;
+                    document.getElementById("odejmowanie").innerHTML = liczba1 - liczba2;
+                    document.getElementById("mnozenie").innerHTML = liczba1 * liczba2;
+                    if(liczba2 != 0){
+                        document.getElementById("dzielenie").innerHTML = liczba1 / liczba2;
+                    }else{
+                        document.getElementById("dzielenie").innerHTML = "Nie można dzielić przez 0";
+                    }
+                }
+                document.getElementById("butt").addEventListener('click', result);
+            </script>
+        </form>
+    </body>
+</html>

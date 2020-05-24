@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>js04.html</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="komunikat">To jest tekst!</div>
+        <a href="#" id="schowaj">Schowaj</a><br>
+        <a href="#" id="pokaz">Pokaz</a>
+        <script>
+
+            $( "#pokaz" ).click(function() {
+                $( "#komunikat" ).slideDown("slow");
+            });
+
+            $( "#schowaj" ).click(function() {
+                $( "#komunikat" ).slideUp("slow");
+            });
+
+        </script>
+    </body>
+</html>
